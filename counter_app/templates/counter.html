@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #containner {
+            text-align: center;
+            margin: 20px;
+            background-color:black;
+            color: white;
+            min-height: 300px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="containner">
+        <form action="/" method="post">
+            {% csrf_token %}
+            <h1> Counter </h1><br>
+            <p>{{request.session.counter}}times</p>
+            <a href="/add_2"><button type="button">+2</button></a><br>
+            
+            <a href="/destroy_session"><button type="button">Reset</button></a>
+        </form>
+    </div>
+</body>
+</html>
